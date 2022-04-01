@@ -1,0 +1,28 @@
+{
+  "name": "model-to-file",
+  "version": "0.0.1",
+  "description": "Exports sequelize models to javascript/typescript class file",
+  "main": "./lib/app.js",
+  "bin": {
+    "model-to-file": "./bin/model-to-file"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orozco92/model-to-file.git"
+  },
+  "keywords": [
+    "sequelize",
+    "class",
+    "model"
+  ],
+  "author": "orozco92",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orozco92/model-to-file/issues"
+  },
+  "homepage": "https://github.com/orozco92/model-to-file#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.6"
+  }
+}
