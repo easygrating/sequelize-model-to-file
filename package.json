@@ -6,6 +6,15 @@
   "bin": {
     "model-to-file": "./bin/model-to-file"
   },
+  "scripts": {
+    "test": "jest --coverage --detectOpenHandles"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/orozco92/model-to-file.git"
@@ -15,7 +24,7 @@
     "class",
     "model"
   ],
-  "author": "orozco92",
+  "author": "orozco92,lmsv930213",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/orozco92/model-to-file/issues"
@@ -23,6 +32,11 @@
   "homepage": "https://github.com/orozco92/model-to-file#readme",
   "dependencies": {
     "lodash": "^4.17.21",
-    "minimist": "^1.2.6"
+    "minimist": "^1.2.6",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "sequelize": "^6.28.0"
   }
 }
