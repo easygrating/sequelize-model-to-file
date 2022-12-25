@@ -1,8 +1,17 @@
+const { INVALID_PATH_ERROR } = require('../../lib/constants/messages.constants')
 const { SequelizeService } = require('../../lib/services/index')
+const path = require('path')
 
 describe('Test all methods from Sequelize Service', () => {
+    test('Should throw an error', async () => {
+        expect(() => SequelizeService.getSequelizePath())
+            .toThrow(INVALID_PATH_ERROR)
+    })
     test('Should return the sequelize path from default lib folder', async () => {
-        const dbPath = SequelizeService.getSequelizePath()
+        const argv = {
+            path: path.join(__dirname, '..', '..', 'example', 'sequelize-app', 'src', 'models', 'index.js')
+        }
+        const dbPath = SequelizeService.getSequelizePath(argv)
         expect(dbPath.includes('index.js')).toBe(true)
     })
 })

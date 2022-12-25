@@ -4,7 +4,10 @@ const fs = require('fs')
 const path = require('path')
 
 describe('Test all methods from Model Service', () => {
-    const dbPath = SequelizeService.getSequelizePath()
+    const argv = {
+        path: path.join(__dirname, '..', '..', 'example', 'sequelize-app', 'src', 'models', 'index.js')
+    }
+    const dbPath = SequelizeService.getSequelizePath(argv)
     test('Should throw an error if the model is not provided', async () => {
         expect(() => ModelService.exportModel(null, dbPath))
             .toThrow(INVALID_MODEL_ERROR)

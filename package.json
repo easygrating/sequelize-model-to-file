@@ -24,7 +24,16 @@
     "class",
     "model"
   ],
-  "author": "orozco92,lmsv930213",
+  "contributors": [
+    {
+      "name": "Luis David",
+      "url": "https://github.com/orozco92"
+    },
+    {
+      "name": "Luis Miguel",
+      "url": "https://github.com/luismi930213"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/orozco92/model-to-file/issues"
@@ -32,11 +41,11 @@
   "homepage": "https://github.com/orozco92/model-to-file#readme",
   "dependencies": {
     "lodash": "^4.17.21",
-    "minimist": "^1.2.6",
-    "pg": "^8.8.0"
+    "minimist": "^1.2.6"
   },
   "devDependencies": {
     "jest": "^29.3.1",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.28.0",
+    "sqlite3": "^5.1.4"
   }
 }
