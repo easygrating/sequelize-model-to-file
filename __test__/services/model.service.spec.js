@@ -21,8 +21,14 @@ describe('Test all methods from Model Service', () => {
         expect(fs.existsSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.ts')))
             .toBe(true)
     })
+    test('Should create the .js class for the provided model', async () => {
+        ModelService.exportModel({ model: 'Province', extension: 'js' }, dbPath)
+        expect(fs.existsSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.js')))
+            .toBe(true)
+    })
 })
 
 afterAll(() => {
     fs.unlinkSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.ts'))
+    fs.unlinkSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.js'))
 })
