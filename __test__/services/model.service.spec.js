@@ -18,17 +18,17 @@ describe('Test all methods from Model Service', () => {
     })
     test('Should create the .ts class for the provided model', async () => {
         ModelService.exportModel({ model: 'Province' }, dbPath)
-        expect(fs.existsSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.ts')))
+        expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.ts')))
             .toBe(true)
     })
     test('Should create the .js class for the provided model', async () => {
         ModelService.exportModel({ model: 'Province', extension: 'js' }, dbPath)
-        expect(fs.existsSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.js')))
+        expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.js')))
             .toBe(true)
     })
 })
 
 afterAll(() => {
-    fs.unlinkSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.ts'))
-    fs.unlinkSync(path.join(__dirname, '..', '..', 'sequelizeModels', 'Province.js'))
+    fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.ts'))
+    fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.js'))
 })
