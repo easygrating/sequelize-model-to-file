@@ -23,8 +23,12 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: true,
 		},
 		longitude: {
-			type: DataTypes.STRING,
+			type: DataTypes.DOUBLE,
 			allowNull: true,
+		},
+		createdAt: {
+			type: DataTypes.DATEONLY,
+			allowNull: false,
 		},
 	}, {
 		sequelize,
