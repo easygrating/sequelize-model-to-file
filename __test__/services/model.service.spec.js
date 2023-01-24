@@ -36,4 +36,5 @@ describe('Test all methods from Model Service', () => {
 afterAll(() => {
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.ts'))
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.js'))
+    fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.py'))
 })
