@@ -1,0 +1,5 @@
+<% _.forEach(usings, function(using) { %>using <%- using %><%-"\n"%><% }); %>
+public class <%= className %> 
+{ 
+<% _.forEach(properties, function(prop) { %><%-"\t"%>public <%-prop.type %> <%- prop.name %> { get; set; }<%-"\n"%><% });%> 
+}
