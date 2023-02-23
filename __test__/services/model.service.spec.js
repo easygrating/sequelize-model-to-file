@@ -21,9 +21,19 @@ describe('Test all methods from Model Service', () => {
         expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.ts')))
             .toBe(true)
     })
+    test('Should create the .py class for the provided model', async () => {
+        ModelService.exportModel({ model: 'Province', extension: 'py' }, dbPath)
+        expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.py')))
+            .toBe(true)
+    })
     test('Should create the .js class for the provided model', async () => {
         ModelService.exportModel({ model: 'Province', extension: 'js' }, dbPath)
         expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.js')))
+            .toBe(true)
+    })
+    test('Should create the .cs class for the provided model', async () => {
+        ModelService.exportModel({ model: 'Province', extension: 'cs' }, dbPath)
+        expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.cs')))
             .toBe(true)
     })
     test('Should create a java class for the provided model', async () => {
@@ -37,4 +47,6 @@ afterAll(() => {
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.ts'))
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.js'))
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.java'))
+    fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.py'))
+    fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.cs'))
 })
