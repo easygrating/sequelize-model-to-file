@@ -36,6 +36,11 @@ describe('Test all methods from Model Service', () => {
         expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.cs')))
             .toBe(true)
     })
+		test('Should create the .php class for the provided model', async () => {
+			ModelService.exportModel({ model: 'Province', extension: 'php' }, dbPath)
+			expect(fs.existsSync(path.join(__dirname, '..', '..', 'output-models', 'Province.php')))
+				.toBe(true)
+		})
 })
 
 afterAll(() => {
@@ -43,4 +48,5 @@ afterAll(() => {
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.js'))
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.py'))
     fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.cs'))
+    fs.unlinkSync(path.join(__dirname, '..', '..', 'output-models', 'Province.php'))
 })
