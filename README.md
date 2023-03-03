@@ -28,7 +28,7 @@ class Province {
 | Option               | Alias             | Description                                                         |
 | -------------------- | ----------------- | ------------------------------------------------------------------- |
 | model                | m                 | The name of the model you want to export                                 |
-| extension (optional) | e                 | File/language extension for the output class file. Defaults to `.ts`. Supports `ts`, `js`, `py` and `cs`. |
+| extension (optional) | e                 | File/language extension for the output class file. Defaults to `.ts`. Supports `ts`, `js`, `py`, `php` and `cs`. |
 | path (optional)      | p, sequelize-path | Path to the [Sequelize](https://sequelize.org) index.js file. By default `./models/index.js` |
 
 ## Install
