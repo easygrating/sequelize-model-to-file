@@ -1,0 +1,16 @@
+<?php
+
+// This class was exported via node package model-to-file.
+class <%= className %>
+{
+<% _.forEach(properties, function(prop) { %><%-"\t"%>private $<%- prop.name %>;<%-"\n"%><% });%>
+    public function __construct() { }
+
+<%
+    _.forEach(properties, function(prop) {
+    %><%-"\t"%>public function <%- prop.getName %>(): <%- prop.allowNull %><%- prop.type %><%-"\n"%><%-"\t"%>{<%-"\n"%><%-"\t"%><%-"\t"%>return $this-><%- prop.name %>;<%-"\n"%><%-"\t"%>}<%-"\n"%><%-"\n"%><%
+
+    %><%-"\t"%>public function <%- prop.setName %>(<%- prop.allowNull %><%- prop.type %> $<%- prop.name %>)<%-"\n"%><%-"\t"%>{<%-"\n"%><%-"\t"%><%-"\t"%>$this-><%- prop.name %> = $<%- prop.name %>;<%-"\n"%><%-"\t"%>}<%-"\n"%><%-"\n"%><%
+    });
+%>
+}
