@@ -1,3 +1,4 @@
+import java.util.*;
 public class Province  {
 	private int id;
 	private String name;
