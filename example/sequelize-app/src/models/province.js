@@ -19,19 +19,22 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false,
 		},
 		latitude: {
-			type: DataTypes.STRING,
+			type: DataTypes.DECIMAL(8,6),
 			allowNull: true,
 		},
 		longitude: {
-			type: DataTypes.STRING,
+			type: DataTypes.DECIMAL(8,6),
 			allowNull: true,
+		},
+		createdAt: {
+			type: DataTypes.DATEONLY,
+			allowNull: false,
 		},
 	}, {
 		sequelize,
 		modelName: 'Province',
 		tableName: 'provinces',
-		underscored: true,
-		timestamps: false
+		underscored: true
 	})
 	return Province
 }
