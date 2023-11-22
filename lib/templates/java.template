@@ -1,0 +1,17 @@
+<% _.forEach(packages, function(package) { %>import <%-package %><%-"\n"%><% }); %>
+public class <%= className %> 
+{ 
+<% _.forEach(properties, function(prop) { %><%-"\t"%>public <%-prop.type %> <%- prop.name %>;<%-"\n"%><% });%> 
+//Default constructor
+public <%= className %>(){
+<% _.forEach(properties, function(prop) { %><%-"\t"%>this.<%- prop.name %> = <%- prop.defaultValue %>;<%-"\n"%><% });%> 
+}
+// Constructor with parameters
+public <%= className %>(<% _.forEach(properties, function(prop) { %><%- prop.type %> <%- prop.name %>, <% });%>){
+<% _.forEach(properties, function(prop) { %><%-"\t"%>this.<%- prop.name %> = <%- prop.name %>;<%-"\n"%><% });%> 
+}
+// Getters for each property
+<% _.forEach(properties, function(prop) { %>public <%- prop.type %> get<%- prop.methodName %>(){<%-"\n"%><%-"\t"%>return <%- prop.name %>;<%-"\n"%>}<%-"\n"%><% });%> 
+// Setters for each property
+<% _.forEach(properties, function(prop) { %>public void set<%- prop.methodName %>(<%- prop.type %> <%- prop.name %>){<%-"\n"%><%-"\t"%>return this.<%- prop.name %> = <%- prop.name %>;<%-"\n"%>}<%-"\n"%><% });%> 
+}
