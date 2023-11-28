@@ -50,7 +50,10 @@ afterAll(() => {
     (async () => {
         const extensions = ['.ts', '.js', '.java', '.py', '.cs', '.php']
         for (const extension of extensions) {
-            await unlink(path.join(outputFolderPath, `Province${extension}`))
+            const filePath = path.join(outputFolderPath, `Province${extension}`)
+            if (!fs.existsSync(filePath))
+                continue;
+            await unlink(filePath)
         }
     })()
 })
