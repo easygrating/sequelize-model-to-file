@@ -1,0 +1,38 @@
+name: Publish Package
+
+on:
+  push:
+    branches: ["release"]
+
+jobs:
+  build:
+    name: Build library
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+        name: Install packages
+      - run: npm test
+        name: Test library
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+          scope: "@easygrating"
+      - run: npm ci
+        name: Install packages
+      - run: npm run build
+        name: Build library
+      - run: npm publish --access=public
+        name: Publish package
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
