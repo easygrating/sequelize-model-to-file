@@ -16,14 +16,14 @@ Exports [Sequelize](https://sequelize.org) models to high level programming lang
 Install it as a global package
 
 ```bash
-npm install model-to-file -g
+npm install @easygrating/model-to-file -g
 ```
 
 ## Usage
 
 Create TypeScript class from sequelize model 
 ```bash
-model-to-file --model Province --extension ts
+@easygrating/model-to-file --model Province --extension ts
 ```
 
 will output `Province.ts` file
@@ -42,7 +42,7 @@ class Province {
 ```
 Create C# class from sequelize model 
 ```bash
-model-to-file --model Province --extension cs
+@easygrating/model-to-file --model Province --extension cs
 ```
 
 will output `Province.cs` file
