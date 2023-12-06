@@ -23,7 +23,7 @@ npm install @easygrating/model-to-file -g
 
 Create TypeScript class from sequelize model 
 ```bash
-@easygrating/model-to-file --model Province --extension ts
+model-to-file --model Province --extension ts
 ```
 
 will output `Province.ts` file
@@ -42,7 +42,7 @@ class Province {
 ```
 Create C# class from sequelize model 
 ```bash
-@easygrating/model-to-file --model Province --extension cs
+model-to-file --model Province --extension cs
 ```
 
 will output `Province.cs` file
