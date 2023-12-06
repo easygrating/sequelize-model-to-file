@@ -4,7 +4,7 @@
   "description": "Exports sequelize models to different programming languages class file",
   "main": "./lib/app.js",
   "bin": {
-    "@easygrating/model-to-file": "./bin/eg-model-to-file"
+    "model-to-file": "./bin/model-to-file"
   },
   "scripts": {
     "test": "jest --coverage --detectOpenHandles"

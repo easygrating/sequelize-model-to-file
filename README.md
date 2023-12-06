@@ -1,4 +1,4 @@
-# model-to-file
+# @easygrating/model-to-file
 
 Exports [Sequelize](https://sequelize.org) models to high level programming language class files such as TypeScript, JavaScript, PHP, C#, Java and Python.
 
@@ -8,7 +8,7 @@ Exports [Sequelize](https://sequelize.org) models to high level programming lang
 | -------------------- | ----------------- | -----------------------------------------------------------------------------------------------------------------|
 | model                | m                 | The name of the model you want to export.                                                                        |
 | extension (optional) | e                 | File/language extension for the output class file. Defaults to `.ts`. Supports `ts`, `js`, `py`, `php`, `java` and `cs`. |
-| path (optional)      | p, sequelize-path | Path to the [Sequelize](https://sequelize.org) index.js file. By default `./models/index.js`.                    |
+| path (optional)      | p, sequelize-path | Path to the [Sequelize](https://sequelize.org) index.js directory. By default search for `.sequelizerc` file under the execution directory or `./models/index.js` file if none is found.                    |
 | help (optional)      | h, help           | Display the usage guide.                                                                                         |
 
 ## Install
