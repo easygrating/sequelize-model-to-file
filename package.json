@@ -1,7 +1,7 @@
 {
-  "name": "model-to-file",
-  "version": "0.0.1",
-  "description": "Exports sequelize models to javascript/typescript class file",
+  "name": "@easygrating/model-to-file",
+  "version": "1.0.0",
+  "description": "Exports sequelize models to different programming languages class file",
   "main": "./lib/app.js",
   "bin": {
     "model-to-file": "./bin/model-to-file"
