@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Exports sequelize models to different programming languages class file",
   "main": "./lib/app.js",
+  "files": [
+    "/lib",
+    "/bin"
+  ],
   "bin": {
     "model-to-file": "./bin/model-to-file"
   },
